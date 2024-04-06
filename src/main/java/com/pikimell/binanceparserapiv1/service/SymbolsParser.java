@@ -30,7 +30,7 @@ public class SymbolsParser {
 
     public List<SymbolItem> getHotCoins() throws IOException {
         Element baseContainer = getBaseContainer();
-        Element hotCoinsContainer = baseContainer.selectFirst("div>div:nth-child(1)");
+        Element hotCoinsContainer = baseContainer.selectFirst("div>div.rounded-xl:nth-child(1)");
         assert hotCoinsContainer != null;
         List<Element> elements =  hotCoinsContainer.select(".css-1qyk0y6");
         elements.remove(0);
@@ -38,7 +38,7 @@ public class SymbolsParser {
     }
     public List<SymbolItem> getTopGainers() throws IOException {
         Element baseContainer = getBaseContainer();
-        Element topGainers = baseContainer.selectFirst(":scope > div:nth-child(2)");
+        Element topGainers = baseContainer.selectFirst("div>div.rounded-xl:nth-child(2)");
         assert topGainers != null;
         List<Element> elements =  topGainers.select(".css-1qyk0y6");
         elements.remove(0);
@@ -46,15 +46,15 @@ public class SymbolsParser {
     }
     public List<SymbolItem> getTopLosers() throws IOException {
         Element baseContainer = getBaseContainer();
-        Element topLosers = baseContainer.selectFirst(":scope > div:nth-child(3)");
+        Element topLosers = baseContainer.selectFirst("div>div.rounded-xl:nth-child(3)");
         assert topLosers != null;
         List<Element> elements =  topLosers.select(".css-1qyk0y6");
         elements.remove(0);
         return parseSymbols(elements);
     }
-    public List<SymbolItem> getTopValues() throws IOException {
+    public List<SymbolItem> getTopVolume() throws IOException {
         Element baseContainer = getBaseContainer();
-        Element topValues = baseContainer.selectFirst(":scope > div:nth-child(4)");
+        Element topValues = baseContainer.selectFirst("div>div.rounded-xl:nth-child(4)");
         assert topValues != null;
         List<Element> elements =  topValues.select(".css-1qyk0y6");
         elements.remove(0);
