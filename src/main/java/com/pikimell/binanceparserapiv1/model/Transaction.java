@@ -28,6 +28,9 @@ public class Transaction {
     @Column(name = "price")
     private Double price;
 
+    @Column(name = "type_transaction")
+    private String typeTransaction;
+
     @Column(name = "create_transaction")
     private String timestamp;
 
